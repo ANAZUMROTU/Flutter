@@ -49,11 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               const SizedBox(height: 20),
               // --- FOTO PROFIL ---
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 60,
-                backgroundImage: NetworkImage(
-                  'https://ui-avatars.com/api/?name=User&background=random&size=256', 
-                ),
+                backgroundImage: AssetImage('assets/images/anacomel.jpg'),
               ),
               const SizedBox(height: 25),
 
@@ -61,19 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
               Text(
                 "Ana Zumrotu Nailir Rif Ah",
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               const SizedBox(height: 15),
 
               // Kartu Informasi NIM & Prodi
               Card(
                 elevation: 0,
-                color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+                color: Theme.of(
+                  context,
+                ).colorScheme.surfaceVariant.withOpacity(0.3),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
-                  side: BorderSide(color: Theme.of(context).colorScheme.outlineVariant),
+                  side: BorderSide(
+                    color: Theme.of(context).colorScheme.outlineVariant,
+                  ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -81,7 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       _buildInfoRow(Icons.badge_outlined, "NRP", "3124521005"),
                       const Divider(height: 25),
-                      _buildInfoRow(Icons.school_outlined, "Program Studi", "Teknik Informatika"),
+                      _buildInfoRow(
+                        Icons.school_outlined,
+                        "Program Studi",
+                        "Teknik Informatika",
+                      ),
                     ],
                   ),
                 ),
@@ -120,8 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-            Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+            Text(
+              label,
+              style: const TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+            Text(
+              value,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
           ],
         ),
       ],
